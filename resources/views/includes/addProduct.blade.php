@@ -19,7 +19,7 @@
         </div>
         <div class="form-grpup" style="padding-bottom:10px">
             {{Form::label('price', 'Price')}}
-            {!!Form::number('price',null,['class' => 'form-control','step'=>'any']) !!}
+            {!!Form::number('price',null,['class' => 'form-control','placeholder' => 'Price', 'step'=>'any']) !!}
         </div>
         {{Form::file('image')}}
 
