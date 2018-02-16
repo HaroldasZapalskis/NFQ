@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Orders;
 use App\Product;
-
+use Illuminate\Support\Facades\Storage;
+use DB;
 class PagesController extends Controller
 {
     public function orders(Request $request) {
