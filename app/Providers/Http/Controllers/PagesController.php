@@ -10,8 +10,28 @@ class PagesController extends Controller
 {
     public function orders(Request $request) {
         $products = Product::all(['id', 'book_name'])->pluck('book_name', 'id');
+
+        $search = $request->input('search');
         $sort = $request->input('sort');
         $by = $request->input('value');
+
+        if(!empty($search) and !empty($sort)) {
+            if($by === 'asc') {
+                $orders = Orders::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')->orWhere('address', 'like', '%'.$search.'%')->orWhere('created_at', 'like', '%'.$search.'%')->orderBy($sort)->paginate(10);
+                return view('pages.orders')->with('orders', $orders)->with('products', $products);
+            } else {
+                $orders = Orders::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')->orWhere('address', 'like', '%'.$search.'%')->orWhere('order_date', 'like', '%'.$search.'%')->orderBy($sort)->paginate(10);
+                return view('pages.orders')->with('orders', $orders)->with('products', $products);
+            }
+            return view('pages.orders')->with('orders', $orders)->with('products', $products);
+        }
+
+        if (!empty($search)) {
+            $orders = Orders::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')->orWhere('address', 'like', '%'.$search.'%')->orWhere('created_at', 'like', '%'.$search.'%')->paginate(10);
+
+            return view('pages.orders')->with('orders', $orders)->with('products', $products);
+        }
+
         if (!empty($sort)) {
             if($by === 'asc') {
                 $orders = Orders::orderBy($sort)->paginate(10);
