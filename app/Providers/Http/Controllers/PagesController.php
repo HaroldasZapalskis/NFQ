@@ -21,7 +21,7 @@ class PagesController extends Controller
                 $orders = Orders::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')->orWhere('address', 'like', '%'.$search.'%')->orWhere('created_at', 'like', '%'.$search.'%')->orderBy($sort)->paginate(10);
                 return view('pages.orders')->with('orders', $orders)->with('products', $products);
             } else {
-                $orders = Orders::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')->orWhere('address', 'like', '%'.$search.'%')->orWhere('order_date', 'like', '%'.$search.'%')->orderBy($sort)->paginate(10);
+                $orders = Orders::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')->orWhere('address', 'like', '%'.$search.'%')->orWhere('created_at', 'like', '%'.$search.'%')->orderBy($sort)->paginate(10);
                 return view('pages.orders')->with('orders', $orders)->with('products', $products);
             }
             return view('pages.orders')->with('orders', $orders)->with('products', $products);
