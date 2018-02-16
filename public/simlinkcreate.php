@@ -1,2 +1,2 @@
 </php
-symlink('storage/app/public', 'public/storage');
+symlink('heroku/php/nfqprojectharoldaszapalskis/storage/app/public/images', 'heroku/php/nfqprojectharoldaszapalskis/public/storage/images');
