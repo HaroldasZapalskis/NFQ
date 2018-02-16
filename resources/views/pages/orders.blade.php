@@ -16,7 +16,7 @@
             <th>Email <a href="/orders?sort=email&value=asc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-up"></span></a><a href="/orders?sort=email&value=desc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-down"></span></a></th>
             <th>Address <a href="/orders?sort=address&value=asc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-up"></span></a><a href="/orders?sort=address&value=desc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-down"></span></a></th>
             <th>Order date <a href="/orders?sort=created_at&value=asc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-up"></span></a><a href="/orders?sort=created_at&value=desc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-down"></span></a></th>
-            <th>Book bought <a href="/orders?sort=book_id&value=asc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-up"></span></a><a href="/orders?sort=book_id&value=desc&search={{app('request')->input('search')}}"><span class="glyphicon glyphicon-menu-down"></span></a></th>
+            <th>Book bought</th>
         </tr>
     </thead>
     <tbody>
