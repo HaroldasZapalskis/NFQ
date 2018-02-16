@@ -10,7 +10,7 @@
             <h5>Writen by {{$product->author}}</h5>
             <h5>Release year {{$product->year}}</h5>
             <h5>Pages number {{$product->pages_number}}</h5>
-            <h4>Price: {{$product->price}}</h4>
+            <h4>Price: {{$product->price}} &#0128</h4>
         </div>
 
         <h2 style="text-align: center; padding-bottom: 15px">Order now!</h2>
