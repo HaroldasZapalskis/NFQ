@@ -1,2 +1,2 @@
 </php
-symlink('/home/heroku/NFQ/storage/app/public', '/home/heroku/public_html/storage');
+symlink('storage/app/public', 'public/storage');
